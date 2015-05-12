@@ -139,6 +139,9 @@ public class iCmdExecutor {
 		protected void done() {
 			Log.i(TAG, "CmdWrapper, done, tid="
 					+ Thread.currentThread().getId());
+			
+			removeFromPool(cmd);
+			
 			boolean errorOccured = false;
 			try {
 				final Bundle resultBundle = get();
